@@ -14,8 +14,7 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
   const { data } =  useData();
-  const lasts = data?.events;
-  const last = lasts?.[lasts.length - 1];
+  const last = data?.events[data.events.length - 1];
   return <>
     <header>
       <Menu />
@@ -112,6 +111,7 @@ const Page = () => {
               onError={() => null}
             />
           )}
+          
         </Modal>
       </div>
     </main>
