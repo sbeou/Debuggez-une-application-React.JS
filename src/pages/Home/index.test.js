@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Home from "./index";
 
+
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {
     render(<Home />);
@@ -30,15 +31,21 @@ describe("When Form is created", () => {
 
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
-    // to implement
+    render(<Home />);
+    screen.findByText("User&product MixUsers");
+    screen.findByText("#DigitonPARIS");
   })
   it("a list a people is displayed", () => {
-    // to implement
+    render(<Home />);
+    screen.findByText("Notre équipe");
   })
   it("a footer is displayed", () => {
-    // to implement
+    render(<Home />);
+    screen.findByText("Notre derniére prestation");
   })
   it("an event card, with the last event, is displayed", () => {
-    // to implement
+      render(<Home /> );
+    const lastEvent = screen.getByTestId("last-event")
+    expect(lastEvent).toContain("Forum #productCON"); 
   })
 });
