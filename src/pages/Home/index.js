@@ -13,13 +13,8 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-<<<<<<< HEAD
   const { data }  =  useData();
   const last = data?.events.filter(event => event.id === data.events.length)
-=======
-  const { data }  = useData();
-  const last = data?.events[data.events.length - 1]
->>>>>>> e1bef5c855f028e883a5ef45b3146afedbe40940
   return <>
     <header>
       <Menu />
@@ -122,8 +117,7 @@ const Page = () => {
     </main>
     <footer className="row">
       <div className="col presta">
-        <h3>Notre derniére prestation</h3>
-<<<<<<< HEAD
+        <h3>Notre dernière prestation</h3>
           {last?.map((event) => (
               <EventCard 
               data-testid="last-event"
@@ -135,17 +129,6 @@ const Page = () => {
               label="boom"
             />
             ))}
-=======
-          {last?.cover === null ? ( 'lodaing' ) : (
-            <EventCard
-              imageSrc={last?.cover}
-              title={last?.title}
-              date={new Date(last?.date)}
-              small
-              label="boom"
-            />
-          )}
->>>>>>> e1bef5c855f028e883a5ef45b3146afedbe40940
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>

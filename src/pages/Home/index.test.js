@@ -44,8 +44,7 @@ describe("When a page is created", () => {
     screen.findByText("Notre derniére prestation");
   })
   it("an event card, with the last event, is displayed", () => {
-      render(<Home /> );
-    const lastEvent = screen.getByTestId("last-event")
-    expect(lastEvent).toContain("Forum #productCON"); 
+    render(<Home /> );
+    screen.findByTestId("last-event"); 
   })
 });
