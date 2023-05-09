@@ -115,12 +115,11 @@ const Page = () => {
         </Modal>
       </div>
     </main>
-    <footer className="row">
+    <footer className="row" data-testid="footer">
       <div className="col presta">
         <h3>Notre dernière prestation</h3>
           {last?.map((event) => (
               <EventCard 
-              data-testid="last-event"
               key={event.id}
               imageSrc={event.cover}
               title={event.title}

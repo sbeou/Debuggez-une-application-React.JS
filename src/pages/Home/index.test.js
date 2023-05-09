@@ -30,21 +30,23 @@ describe("When Form is created", () => {
 
 
 describe("When a page is created", () => {
-  it("a list of events is displayed", () => {
+  it("a list of events is displayed", async () => {
+    render(
+      <Home />
+    );
+    await screen.findByText("Catégories");
+  });
+  it("a list a people is displayed", async () => {
     render(<Home />);
-    screen.findByText("User&product MixUsers");
-    screen.findByText("#DigitonPARIS");
-  })
-  it("a list a people is displayed", () => {
+    await screen.findByText("Samira");
+    await screen.findByText("CEO");
+  });
+  it("a footer is displayed",  async () => {
     render(<Home />);
-    screen.findByText("Notre équipe");
-  })
-  it("a footer is displayed", () => {
-    render(<Home />);
-    screen.findByText("Notre derniére prestation");
-  })
-  it("an event card, with the last event, is displayed", () => {
+    await screen.findByTestId("footer"); 
+  });
+  it("an event card, with the last event, is displayed", async () => {
     render(<Home /> );
-    screen.findByTestId("last-event"); 
-  })
+    await screen.findByText("Notre dernière prestation");
+  });
 });
